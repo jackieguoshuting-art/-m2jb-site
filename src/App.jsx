@@ -11,9 +11,9 @@ const STATS = [
 
 const LAYOUTS = [
   { name: "Concert", icon: "🎵", desc: "Full-stage front-facing setup for touring acts" },
-  { name: "Sports", icon: "🏟️", desc: "Field configuration for competitive events" },
+  { name: "Special Activities", icon: "🧘‍♀️", desc: "Field configuration for special events" },
   { name: "360° Festival", icon: "🎪", desc: "Wraparound crowd experience for festivals" },
-  { name: "Winter T-Stage", icon: "❄️", desc: "Off-season intimate stage design" },
+  { name: "Summer Central Stage", icon: "☀️", desc: "On-season exclusive stage design" },
 ];
 
 const PARTNERS = ["AEG Presents", "Ticketmaster", "SeatGeek"];
