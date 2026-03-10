@@ -24,7 +24,7 @@ const ARTISTS = [
   { name: "The Black Keys", tag: "Music · Akron Icons" },
   { name: "Dave Chappelle", tag: "Comedy" },
   { name: "Matt Rife", tag: "Comedy" },
-  { name: "Yoga on the Rocks", tag: "Specialty · Wellness" },
+  { name: "Yoga on the Hoga", tag: "Specialty · Wellness" },
 ];
 
 function useInView(threshold = 0.15) {
