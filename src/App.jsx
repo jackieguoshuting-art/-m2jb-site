@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 
-const NAV_ITEMS = ["Overview", "About", "Market", "Operations", "Programming", "Financials", "Sustainability"];
+const NAV_ITEMS = ["Overview", "About", "Market", "Operations", "Programming", "Sustainability", "Contact"];
 
 const STATS = [
   { value: "5,000", label: "Seats" },
-  { value: "$47.5M", label: "Capital" },
-  { value: "8mo", label: "Season" },
-  { value: "7–9yr", label: "ROI Period" },
+  { value: "50+", label: "Events / Year" },
+  { value: "Apr–Nov", label: "Season" },
+  { value: "Cleveland", label: "Ohio" },
 ];
 
 const LAYOUTS = [
@@ -14,13 +14,6 @@ const LAYOUTS = [
   { name: "Sports", icon: "🏟️", desc: "Field configuration for competitive events" },
   { name: "360° Festival", icon: "🎪", desc: "Wraparound crowd experience for festivals" },
   { name: "Winter T-Stage", icon: "❄️", desc: "Off-season intimate stage design" },
-];
-
-const REVENUE = [
-  { label: "Ticket Sales", pct: 45, color: "#1a1a1a" },
-  { label: "F&B", pct: 25, color: "#333" },
-  { label: "VIP / Sponsorship", pct: 18, color: "#555" },
-  { label: "Parking & Naming Rights", pct: 12, color: "#888" },
 ];
 
 const PARTNERS = ["AEG Presents", "Ticketmaster", "SeatGeek"];
@@ -176,19 +169,19 @@ export default function App() {
             A 5,000-seat mid-size outdoor venue redefining live entertainment in Cleveland — where music, hospitality, and culture converge.
           </p>
           <div style={{ display: "flex", gap: "1rem" }}>
-            <button onClick={() => scrollTo("Overview")} style={{
+            <button onClick={() => scrollTo("Programming")} style={{
               background: "#fff", color: "#111",
               border: "none", cursor: "pointer",
               padding: "12px 28px", fontFamily: "'DM Mono', monospace",
               fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase",
               fontWeight: 500,
-            }}>Explore Project</button>
-            <button onClick={() => scrollTo("Financials")} style={{
+            }}>See What's On</button>
+            <button onClick={() => scrollTo("Contact")} style={{
               background: "transparent", color: "rgba(255,255,255,0.6)",
               border: "1px solid rgba(255,255,255,0.2)", cursor: "pointer",
               padding: "12px 28px", fontFamily: "'DM Mono', monospace",
               fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase",
-            }}>Financials</button>
+            }}>Plan Your Visit</button>
           </div>
         </div>
 
@@ -219,11 +212,11 @@ export default function App() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
               {[
                 { label: "Name", value: "M2JB Amphitheater" },
-                { label: "Parent Property", value: "The Sky & Water Resort" },
+                { label: "Part of", value: "The Sky & Water Resort" },
                 { label: "Location", value: "Cleveland, Ohio" },
                 { label: "Capacity", value: "5,000 Seats" },
-                { label: "Season", value: "April – November (Peak: June – August)" },
-                { label: "Market Position", value: "Mid-size gap fill: 2,000 → 10,000+ seat bridge" },
+                { label: "Season", value: "April – November" },
+                { label: "Peak Season", value: "June – August" },
               ].map((item, i) => (
                 <div key={i} style={{ borderTop: "1px solid #e8e8e8", paddingTop: "1.2rem" }}>
                   <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#999", marginBottom: "0.4rem" }}>{item.label}</p>
@@ -263,17 +256,17 @@ export default function App() {
         {/* MARKET */}
         <Section id="Market">
           <div style={{ padding: "5rem 0 4rem" }}>
-            <SectionTitle eyebrow="03 — Market & Strategy" title="A Proven Market Gap" />
+            <SectionTitle eyebrow="03 — Cleveland's Venue" title="Built for This City" />
             <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "4rem", alignItems: "start" }}>
               <div>
                 <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "#444", marginBottom: "2rem" }}>
-                  Heat map analysis confirms a high-density concentration of affluent consumers within the Cleveland metro area — with no comparable modern outdoor venue to serve them. M2JB fills that gap precisely.
+                  Cleveland has a thriving live entertainment scene — and M2JB Amphitheater is the outdoor home it's been missing. A modern lakeside venue where artists want to perform and fans feel every moment.
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {[
-                    { icon: "👥", title: "Target Audience", desc: "Ages 25–65 · Income $80k–$160k" },
-                    { icon: "🎰", title: "Synergy", desc: "Hotel (300 rooms) + Casino + Live Events" },
-                    { icon: "📍", title: "Catchment", desc: "Resort guests, casino patrons & locals" },
+                    { icon: "🏨", title: "Stay & Play", desc: "Hotel, casino, and live events — all in one resort. Book a room and make a night of it." },
+                    { icon: "☀️", title: "Summer is the Season", desc: "Peak programming June – August, with concerts and events running April through November." },
+                    { icon: "📍", title: "Lakeside, Only Here", desc: "An outdoor amphitheater on the water — no other venue in Cleveland offers this setting." },
                   ].map((item, i) => (
                     <div key={i} style={{ display: "flex", gap: "1rem", alignItems: "flex-start", padding: "1.2rem", background: "#f7f7f7" }}>
                       <span style={{ fontSize: "1.3rem" }}>{item.icon}</span>
@@ -312,20 +305,20 @@ export default function App() {
         {/* OPERATIONS */}
         <Section id="Operations">
           <div style={{ padding: "5rem 0 4rem" }}>
-            <SectionTitle eyebrow="04 — Operations & Partnerships" title="In-House Control,\nWorld-Class Partners" />
+            <SectionTitle eyebrow="04 — Partners & Experience" title="World-Class Partners,\nSeamless Experience" />
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", marginBottom: "3rem" }}>
               <div style={{ padding: "2rem", border: "1px solid #e0e0e0" }}>
-                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#999", marginBottom: "0.8rem" }}>Management Model</p>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", marginBottom: "0.8rem" }}>100% In-House</h3>
+                <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#999", marginBottom: "0.8rem" }}>Venue Management</p>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", marginBottom: "0.8rem" }}>Fully Integrated</h3>
                 <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: 1.7 }}>
-                  Full retention of F&B profits and facility fees. Brand consistency across the entire resort ecosystem — from pre-show dining to post-show accommodation.
+                  Every part of your experience — from pre-show dining at the resort to the show itself — is managed under one roof, so nothing falls through the cracks.
                 </p>
               </div>
               <div style={{ padding: "2rem", background: "#111", color: "#fff" }}>
                 <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: "0.8rem" }}>Booking Partner</p>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", marginBottom: "0.8rem" }}>AEG Presents</h3>
                 <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7 }}>
-                  Global reach, A-list artist relationships, and reduced booking risk for a new venue entering the market.
+                  Global reach and direct access to A-list touring artists — bringing the best acts to Cleveland's newest stage.
                 </p>
               </div>
             </div>
@@ -371,31 +364,10 @@ export default function App() {
 
         <div style={{ height: "1px", background: "#ececec" }} />
 
-        {/* FINANCIALS */}
-        <Section id="Financials">
-          <div style={{ padding: "5rem 0 4rem" }}>
-            <SectionTitle eyebrow="06 — Financials" title="Capital & Returns" />
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
-              {[
-                { label: "Capital Required", value: "$47.5M" },
-                { label: "ROI Timeline", value: "7–9 Years" },
-                { label: "Strategy", value: "High-density weekend scheduling" },
-              ].map((item, i) => (
-                <div key={i} style={{ borderTop: "3px solid #111", paddingTop: "1.5rem" }}>
-                  <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#999", marginBottom: "0.6rem" }}>{item.label}</p>
-                  <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.8rem", fontWeight: 700 }}>{item.value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Section>
-
-        <div style={{ height: "1px", background: "#ececec" }} />
-
         {/* SUSTAINABILITY */}
         <Section id="Sustainability">
           <div style={{ padding: "5rem 0 6rem" }}>
-            <SectionTitle eyebrow="07 — Sustainability & Risk" title="Built for the Long Run" />
+            <SectionTitle eyebrow="06 — Guest Experience & Sustainability" title="Built for the Long Run" />
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5rem" }}>
               {[
                 { icon: "💡", title: "LED Lighting", desc: "Full venue conversion to energy-efficient LED systems" },
@@ -416,11 +388,50 @@ export default function App() {
         </Section>
       </div>
 
+      {/* CONTACT */}
+      <div id="Contact" style={{
+        background: "#111", color: "#fff",
+        padding: "6rem clamp(1.5rem, 8vw, 8rem)",
+        display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
+        gap: "1.5rem",
+      }}>
+        <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)" }}>
+          Get In Touch
+        </p>
+        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, maxWidth: "600px", lineHeight: 1.2 }}>
+          Booking, Sponsorship & Private Events
+        </h2>
+        <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)", maxWidth: "460px", lineHeight: 1.7 }}>
+          Interested in bringing your show to M2JB? Looking for sponsorship opportunities or planning a private event? We'd love to hear from you.
+        </p>
+        <div style={{ display: "flex", gap: "1rem", marginTop: "0.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <a href="mailto:info@m2jbamphitheater.com" style={{
+            background: "#fff", color: "#111",
+            padding: "12px 28px", fontFamily: "'DM Mono', monospace",
+            fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase",
+            fontWeight: 500, textDecoration: "none", display: "inline-block",
+          }}>Contact Us</a>
+          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} style={{
+            background: "transparent", color: "rgba(255,255,255,0.55)",
+            border: "1px solid rgba(255,255,255,0.2)", cursor: "pointer",
+            padding: "12px 28px", fontFamily: "'DM Mono', monospace",
+            fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase",
+          }}>Back to Top ↑</button>
+        </div>
+      </div>
+
       {/* FOOTER */}
-      <footer style={{ background: "#111", color: "rgba(255,255,255,0.4)", padding: "2.5rem clamp(1.5rem, 5vw, 4rem)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", color: "#fff", fontSize: "1rem" }}>M2JB Amphitheater</div>
-        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+      <footer style={{
+        background: "#0a0a0a", color: "rgba(255,255,255,0.3)",
+        padding: "2rem clamp(1.5rem, 5vw, 4rem)",
+        display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.8rem",
+      }}>
+        <div style={{ fontFamily: "'Playfair Display', serif", color: "rgba(255,255,255,0.7)", fontSize: "1rem" }}>M2JB Amphitheater</div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
           The Sky & Water Resort · Cleveland, Ohio
+        </div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.62rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+          © 2025 M2JB Amphitheater
         </div>
       </footer>
     </>
